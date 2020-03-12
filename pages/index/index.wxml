@@ -1,0 +1,62 @@
+<!--index.wxml-->
+
+<view class="nav">
+    <view class='list'  bindtap="OpenPage" data-name='icon' data-page="../Example/icon/index"  hover-class="other-navigator-hover">
+      <text class="iconfont icon-bianji  item_icon"></text>
+      <text>icon示例</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+     <view class='list'   bindtap="OpenPage" data-name='animation' data-page="../Example/animation/index"    style='display:flex' hover-class="other-navigator-hover">
+      <text class='iconfont icon-tongzhi item_icon  animated tada infinite '></text>
+      <text>css动画</text>
+      <text class='right iconfont icon-fanhui item_icon msg_right'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-shoucang  item_icon"></text>
+      <text>仿朋友圈动态</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-tupian  item_icon"></text>
+      <text>电子相册</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-lishijilu  item_icon"></text>
+      <text>同步异步操作</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-tupian  item_icon"></text>
+      <text>截图</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-shijian  item_icon"></text>
+      <text>时间轴</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-duihao  item_icon"></text>
+      <text>全选多选</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-77baobao  item_icon"></text>
+      <text>手机表情兼容</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-shijian  item_icon"></text>
+      <text>自定义时间段选择</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+      <text class="iconfont icon-shangchuan  item_icon"></text>
+      <text>小程序打包App</text>
+      <text class='right iconfont icon-fanhui item_icon'></text> 
+    </view>
+
+</view>
+
+    <view class="author">{{author}}</view>

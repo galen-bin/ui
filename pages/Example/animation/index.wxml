@@ -1,0 +1,146 @@
+<!--pages/Example/animation/index.wxml-->
+
+
+<view class='containView'>
+<text class=' {{animationType}}'>Animate.css</text>
+</view>
+<view class='aniDes'><text>动画类型：{{animationName}}</text></view>
+<checkbox-group bindchange="checkboxChange">
+<label class='boxlabel'><checkbox>循环:infinite</checkbox></label>
+</checkbox-group>
+<button class='btn' type="default" bindtap='clickBtn'>开始动画</button>
+
+<scroll-view scroll-y catchtap='clickAniBtn' class='scrollView'>
+
+<view class="AttentionSeekers">
+  <text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Attention Seekers</text>
+    <button type="default" size="mini" data-btnName="bounce">bounce</button>
+    <button type="default" size="mini" data-btnName="flash">flash</button>
+    <button type="default" size="mini" data-btnName="pulse">pulse</button>
+    <button type="default" size="mini" data-btnName="rubberBand">rubberBand</button>
+    <button type="default" size="mini" data-btnName="shake">shake</button>
+    <button type="default" size="mini" data-btnName="swing">swing</button>
+    <button type="default" size="mini" data-btnName="tada">tada</button>
+    <button type="default" size="mini" data-btnName="wobble">wobble</button>
+    <button type="default" size="mini" data-btnName="jello">jello</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Bouncing Entrances</text>
+    <button type="default" size="mini" data-btnName="bounceIn">bounceIn</button>
+    <button type="default" size="mini" data-btnName="bounceInDown">bounceInDown</button>
+    <button type="default" size="mini" data-btnName="bounceInLeft">bounceInLeft</button>
+    <button type="default" size="mini" data-btnName="bounceInRight">bounceInRight</button>
+    <button type="default" size="mini" data-btnName="bounceInUp">bounceInUp</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Bouncing Exits</text>
+    <button type="default" size="mini" data-btnName="bounceOut">bounceOut</button>
+    <button type="default" size="mini" data-btnName="bounceOutDown">bounceOutDown</button>
+    <button type="default" size="mini" data-btnName="bounceOutLeft">bounceOutLeft</button>
+    <button type="default" size="mini" data-btnName="bounceOutRight">bounceOutRight</button>
+    <button type="default" size="mini" data-btnName="bounceOutUp">bounceOutUp</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Fading Entrances</text>
+    <button type="default" size="mini" data-btnName="fadeIn">fadeIn</button>
+    <button type="default" size="mini" data-btnName="fadeInDown">fadeInDown</button>
+    <button type="default" size="mini" data-btnName="fadeInDownBig">fadeInDownBig</button>
+    <button type="default" size="mini" data-btnName="fadeInLeft">fadeInLeft</button>
+    <button type="default" size="mini" data-btnName="fadeInLeftBig">fadeInLeftBig</button>
+    <button type="default" size="mini" data-btnName="fadeInRight">fadeInRight</button>
+    <button type="default" size="mini" data-btnName="fadeInRightBig">fadeInRightBig</button>
+    <button type="default" size="mini" data-btnName="fadeInUp">fadeInUp</button>
+    <button type="default" size="mini" data-btnName="fadeInUpBig">fadeInUpBig</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Fading Exits</text>
+    <button type="default" size="mini" data-btnName="fadeOut">fadeOut</button>
+    <button type="default" size="mini" data-btnName="fadeOutDown">fadeOutDown</button>
+    <button type="default" size="mini" data-btnName="fadeOutDownBig">fadeOutDownBig</button>
+    <button type="default" size="mini" data-btnName="fadeOutLeft">fadeOutLeft</button>
+    <button type="default" size="mini" data-btnName="fadeOutLeftBig">fadeOutLeftBig</button>
+    <button type="default" size="mini" data-btnName="fadeOutRight">fadeOutRight</button>
+    <button type="default" size="mini" data-btnName="fadeOutRightBig">fadeOutRightBig</button>
+    <button type="default" size="mini" data-btnName="fadeOutUp">fadeOutUp</button>
+    <button type="default" size="mini" data-btnName="fadeOutUpBig">fadeOutUpBig</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Flippers</text>
+    <button type="default" size="mini" data-btnName="flip">flip</button>
+    <button type="default" size="mini" data-btnName="flipInX">flipInX</button>
+    <button type="default" size="mini" data-btnName="flipInY">flipInY</button>
+    <button type="default" size="mini" data-btnName="flipOutX">flipOutX</button>
+    <button type="default" size="mini" data-btnName="flipOutY">flipOutY</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Lightspeed</text>
+    <button type="default" size="mini" data-btnName="lightSpeedIn">lightSpeedIn</button>
+    <button type="default" size="mini" data-btnName="lightSpeedOut">lightSpeedOut</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Rotating Entrances</text>
+    <button type="default" size="mini" data-btnName="rotateIn">rotateIn</button>
+    <button type="default" size="mini" data-btnName="rotateInDownLeft">rotateInDownLeft</button>
+    <button type="default" size="mini" data-btnName="rotateInDownRight">rotateInDownRight</button>
+    <button type="default" size="mini" data-btnName="rotateInUpLeft">rotateInUpLeft</button>
+    <button type="default" size="mini" data-btnName="rotateInUpRight">rotateInUpRight</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Rotating Exits</text>
+    <button type="default" size="mini" data-btnName="rotateOut">rotateOut</button>
+    <button type="default" size="mini" data-btnName="rotateOutDownLeft">rotateOutDownLeft</button>
+    <button type="default" size="mini" data-btnName="rotateOutDownRight">rotateOutDownRight</button>
+    <button type="default" size="mini" data-btnName="rotateOutUpLeft">rotateOutUpLeft</button>
+    <button type="default" size="mini" data-btnName="rotateOutUpRight">rotateOutUpRight</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Sliding Entrances</text>
+    <button  type="default" size="mini"data-btnName="slideInUp">slideInUp</button>
+    <button type="default" size="mini" data-btnName="slideInDown">slideInDown</button>
+    <button type="default" size="mini" data-btnName="slideInLeft">slideInLeft</button>
+    <button type="default" size="mini" data-btnName="slideInRight">slideInRight</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Sliding Exits</text>
+    <button type="default" size="mini" data-btnName="slideOutUp">slideOutUp</button>
+    <button type="default" size="mini" data-btnName="slideOutDown">slideOutDown</button>
+    <button type="default" size="mini" data-btnName="slideOutLeft">slideOutLeft</button>
+    <button type="default" size="mini" data-btnName="slideOutRight">slideOutRight</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Zoom Entrances</text>
+    <button type="default" size="mini" data-btnName="zoomIn">zoomIn</button>
+    <button type="default" size="mini" data-btnName="zoomInDown">zoomInDown</button>
+    <button type="default" size="mini" data-btnName="zoomInLeft">zoomInLeft</button>
+    <button type="default" size="mini" data-btnName="zoomInRight">zoomInRight</button>
+    <button type="default" size="mini" data-btnName="zoomInUp">zoomInUp</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Zoom Exits</text>
+    <button type="default" size="mini" data-btnName="zoomOut">zoomOut</button>
+    <button type="default" size="mini" data-btnName="zoomOutDown">zoomOutDown</button>
+    <button type="default" size="mini" data-btnName="zoomOutLeft">zoomOutLeft</button>
+    <button type="default" size="mini" data-btnName="zoomOutRight">zoomOutRight</button>
+    <button type="default" size="mini" data-btnName="zoomOutUp">zoomOutUp</button>
+</view>
+
+<view class="AttentionSeekers">
+<text style='width:100%;font-size:13px;padding:10rpx;background-color:#ccc;color:white;'>Specials</text>
+    <button type="default" size="mini" data-btnName="hinge">hinge</button>
+    <button type="default" size="mini" data-btnName="jackInTheBox">jackInTheBox</button>
+    <button type="default" size="mini"  data-btnName="rollIn">rollIn</button>
+    <button type="default" size="mini" data-btnName="rollOut">rollOut</button>
+</view>
+</scroll-view> 

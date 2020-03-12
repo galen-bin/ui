@@ -37,7 +37,7 @@ App({
     userInfo: null,
     author:'galen-bin'
   },
-  server: "https://wx.ejyapp.com/index/api/",
-  host: "https://wx.ejyapp.com/",
+  server: "http://www.test.com/",
+  host: "http://www.test.com/",
   test: "http://www.test.com/",
 })

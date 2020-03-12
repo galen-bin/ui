@@ -38,7 +38,7 @@
             <button bindtap='delete' data-index="{{idx}}" data-id="{{item.Id}}" >删除</button>
           </block>
           <button  > </button>
-          <view class="zantouch"  data-show="{{item.zan}}"  data-index="{{idx}}" hidden="{{DiscussShow}}"  bindtap='TouchDiscuss'>
+          <view class="zantouch"  data-show="{{item.zan}}"  data-index="{{idx}}"    bindtap='TouchDiscuss'>
             <image  src='../images/wxdiscuss.png'></image>
           </view>
         <view class="zan_msk" hidden="{{item.zan}}">

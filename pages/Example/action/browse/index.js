@@ -140,7 +140,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     });
-    that.GetConfig();
+    
   },
   onReady: function () {
 

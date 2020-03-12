@@ -6,12 +6,13 @@
       <text>icon示例</text>
       <text class='right iconfont icon-fanhui item_icon'></text> 
     </view>
-     <view class='list'   bindtap="OpenPage" data-name='animation' data-page="../Example/animation/index"    style='display:flex' hover-class="other-navigator-hover">
+
+    <view class='list'   bindtap="OpenPage" data-name='animation' data-page="../Example/animation/index"    style='display:flex' hover-class="other-navigator-hover">
       <text class='iconfont icon-tongzhi item_icon  animated tada infinite '></text>
       <text>css动画</text>
       <text class='right iconfont icon-fanhui item_icon msg_right'></text> 
     </view>
-    <view class='list'  bindtap="OpenPage" data-name='' data-page=""  hover-class="other-navigator-hover">
+    <view class='list'  bindtap="OpenPage" data-name='browse' data-page="../Example/action/browse/index"  hover-class="other-navigator-hover">
       <text class="iconfont icon-shoucang  item_icon"></text>
       <text>仿朋友圈动态</text>
       <text class='right iconfont icon-fanhui item_icon'></text> 

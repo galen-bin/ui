@@ -1,0 +1,54 @@
+/* pages/Example/action/push/index.wxss */
+@import '/pages/weui.wxss';
+
+
+.page-body-info{
+  padding-bottom: 1rpx solid #ccc;
+  height: 80rpx;
+}
+
+.page-body-text{
+  font-size:28rpx;
+  margin-left:20rpx;
+  font-family: '微软雅黑';  
+  margin-top:20rpx;
+  width: 580rpx;
+  float:left;
+  overflow:hidden;
+text-overflow:ellipsis;
+white-space:nowrap; 
+}
+.page-body-img{
+  width:50rpx;
+  height:50rpx;
+  margin-left:10rpx;
+  margin-top:20rpx;
+  float:left;
+}
+.page-body-img-zk{
+  width:20rpx;
+  height:20rpx;
+  float:right;
+  margin-right:40rpx;
+  margin-top:35rpx;
+}
+#mini-btn{
+  float:right;
+  width: 90%;
+  margin-top: 30rpx;
+  margin-right: 5%;
+  line-height:2;  
+  }
+.right{
+  float: right;
+}
+ .item_icon{
+font-size: 40rpx;
+transform:scale(-1);
+color:#666;
+margin-top: 2px;
+}
+ .iconfont{
+  padding-right: 15rpx;
+}
+

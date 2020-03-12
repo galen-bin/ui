@@ -36,5 +36,8 @@ App({
   globalData: {
     userInfo: null,
     author:'galen-bin'
-  }
+  },
+  server: "https://wx.ejyapp.com/index/api/",
+  host: "https://wx.ejyapp.com/",
+  test: "http://www.test.com/",
 })

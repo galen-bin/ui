@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/Example/icon/index",
     "pages/Example/animation/index",
-    "pages/Example/action/index"
+    "pages/Example/action/index",
+    "pages/Example/action/browse/index",
+    "pages/Example/action/push/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

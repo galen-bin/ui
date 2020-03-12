@@ -1,0 +1,133 @@
+<!--pages/Example/action/browse/index.wxml-->
+<!-- 仿微信朋友圈 -->
+<scroll-view class='page'   scroll-y="true" >
+
+ <!-- 列表 -->
+  <view class='CircleList' wx:for='{{msg_list}}' wx:key="{{key1}}"  wx:for-index="idx">
+    <!-- 头像、昵称、内容 -->
+    <view class='body-view'>
+      <!-- 头像 -->
+      <view class='left-view'>
+        <image class='user-icon' src='{{item.HeaderImage}}'></image>
+      </view>
+      <view class='right-view'>
+        <!-- 昵称 -->
+        <view class='user-name-view'>
+          <label class='user-name'>{{item.UserNamer}}</label>
+        </view>
+        <!-- 内容 -->
+        <view class='user-content-view'>
+          <text class='user-content'>{{item.Content}}</text>
+        </view>
+        <!-- 图片 -->
+        <view class='photo-view' wx:for='{{item.Image}}'  wx:key="{{key2}}">
+          <view wx:if="{{item!=''&item!=null}}" class='photo'  style='width:{{photoWidth}}px;height:{{photoWidth}}px'>   
+
+              <image lazy-load="true"  bindtap='LookPhoto' data-photUrl='{{item}}' data-index="{{idx}}" src='{{item}}' style='width:{{photoWidth}}px;height:{{photoWidth}}px'></image>             
+          </view>
+        </view>
+        <!-- 地理位置 -->
+        <view class='user-address-view'>
+          <label>{{item.Address}}</label>
+        </view>
+
+        <!-- 时间、删除按钮、点赞评论按钮 -->
+        <view class='TDD-view'>
+          <label>{{item.CreateDate}}</label>
+          <block wx:if="{{userinfo.Id==item.UserId}}">
+            <button bindtap='delete' data-index="{{idx}}" data-id="{{item.Id}}" >删除</button>
+          </block>
+          <button  > </button>
+          <view class="zantouch"  data-show="{{item.zan}}"  data-index="{{idx}}" hidden="{{DiscussShow}}"  bindtap='TouchDiscuss'>
+            <image  src='../images/wxdiscuss.png'></image>
+          </view>
+        <view class="zan_msk" hidden="{{item.zan}}">
+          <view class="zan_item" data-index="{{idx}}" data-id="{{item.Id}}" bindtap="Praise">
+           <text class=' iconfont icon-shoucang item_icon'></text> 
+           点赞
+          </view>
+          <view class="zan_item" data-index="{{idx}}" data-id="{{item.Id}}" bindtap="Replay">
+            <text class=' iconfont icon-pinglun item_icon'></text> 
+            评论
+          </view>
+        </view>
+
+        </view>
+
+        <!-- 点赞 -->
+        <view class='zan-view'>
+          <view class='trigon-view' wx:if="{{item.Praise.length>0||item.Comment.length>0}}">
+            <image mode='aspectFill' class='trigon' src='../images/trigon.png'></image>
+          </view>
+
+          <!-- 点赞 -->
+          <view class='zan-bg-view' wx:if="{{item.Praise.length>0}}">     
+            <view class='zan-user-view' wx:for='{{item.Praise}}' wx:key="{{key3}}" wx:for-index="index_z">
+              <label  data-name='{{item.UserNamer}}' class='zan-user'> 
+                <block wx:if="{{index_z==0}}">
+                  <text class=' iconfont icon-shoucang item_icon'></text>
+                </block> 
+                {{item.UserNamer}},
+              </label>
+            </view>
+          </view>
+       
+          <!-- 评论 -->
+          <view class='discuss-view' wx:if="{{item.Comment.length>0}}">
+            <view class='discuss' wx:for='{{item.Comment}}' wx:key="{{key4}}" wx:for-index="index_s" bindtap='TouchZanUser'  data-id='{{item.Id}}' data-parent="{{idx}}" data-index="{{index_s}}"  data-name='{{item.UserNamer}}' data-uid='{{item.uid}}'>
+              <label  class='discuss-user ' >
+              
+                <text wx:if="{{item.RepalyUser!=''&item.RepalyUser!=null}}">
+                 <text class='{{userinfo.Id==item.uid?"parent_text":""}}'>{{item.UserNamer}}</text> <text style="color:rgb(169, 179, 31)">回复</text> <text class='{{userinfo.Id==item.RepalyUser?"parent_text":""}}'>{{item.ReplayName}}：</text>
+                </text>
+                <text wx:else class='{{userinfo.Id==item.uid?"parent_text":""}}'>{{item.UserNamer}}：</text>
+              </label>
+              <label class='content'>{{item.Content}}</label>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+ <view  hidden="{{bootom_style}}"  class="bottom_style">没有更多数据可加载</view>
+</scroll-view>
+
+
+<!-- 评论按钮弹出框 -->
+<view animation="{{animation}}" class='pop-up-box' style='top:{{popTop}}px;width: {{popWidth}}px;'>
+</view>
+<view class="round-click" bindtap="push" hidden="{{push_hidden}}">
+   <text url='../push/index' >+</text >
+</view>
+
+  <!--评论弹出框-->
+<view class="c-top" hidden="{{replay_box}}">
+  <!--评论盒子-->
+  <view class="cf-bg" catchtap="cemojiCfBg" style="display:{{cfBg ? 'block' : 'none'}}"></view>
+  <view class="comment-fixed">
+    <view class="cf-box">
+      <view class="emoji iconfont icon-emoji" catchtap="emojiShowHide"></view>
+      <textarea class="cf-content" style="min-height:20px;" cursor-spacing="15" auto-focus="{true}"  bindfocus="textAreaFocus" maxlength="200" show-confirm-bar = "{{false}}" fixed="true" bindblur="textAreaBlur" bindinput="inputtext"  auto-height value="{{content}}" placeholder="{{placeholder}}" />
+      <text class="cf-send touch-active" bindtap="replay_check">发送</text>
+    </view>
+
+    <!--emoji表情盒子-->
+    <view class="emoji-box {{isShow ? 'emoji-move-in' : 'emoji-move-out'}} {{isLoad ? 'no-emoji-move' : ''}}">
+      <scroll-view scroll-y="true" bindscroll="emojiScroll" style="height:200px">
+        <block wx:for="{{emojis}}" wx:for-item="e" wx:key="{{key5}}">
+          <view class="emoji-cell">
+            <image class="touch-active" catchtap="emojiChoose" src="http://soupu.oss-cn-shanghai.aliyuncs.com/emoji/{{e.emoji}}.png" data-emoji="{{e.char}}" data-oxf="{{e.emoji}}"></image>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+    <!--删除回复-->
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+    <block wx:for-items="{{actionSheetItems}}">
+        <action-sheet-item bindtap="bind{{item.bindtap}}" data-id="{{item.id}}" data-index="{{item.index}}" data-name="{{item.username}}" data-parent_index="{{item.parent_index}}" data-uid="{{item.uid}}">{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>

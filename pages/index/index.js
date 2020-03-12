@@ -51,7 +51,7 @@ Page({
 
     var name = e.currentTarget.dataset.name;
     var page = e.currentTarget.dataset.page;
-    console.log(page);
+    console.log(e);
     if (page=="")
     {
       wx.showToast({

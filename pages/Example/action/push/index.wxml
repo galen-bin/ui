@@ -1,0 +1,68 @@
+<!--pages/Example/action/push/index.wxml-->
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class="section">
+    <textarea bindblur="bindTextAreaBlur" show-confirm-bar = "{{false}}"  auto-height placeholder="这一刻的想法...500字以内" maxlength="500" style="margin-top:20rpx;margin-left:20rpx;width:680rpx;max-height:300rpx;" name="textarea" />
+  </view>
+  <view class="container" style="padding-top:40rpx;float:left;padding-bottom:0;">
+    <view class="page-body" style="float:left;">
+      <view class="page-section">
+
+
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">已选择的照片</view>
+                  <view class="weui-uploader__info">{{imageList.length}}/9</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imageList}}" wx:for-item="image" wx:index="index">
+                      <view class="weui-uploader__file">
+                        <image class="weui-uploader__img" src="{{image}}" data-index="{{index}}" data-src="{{image}}" bindtap="tapimg"></image>
+                      </view>
+                    </block>
+                    <view class="weui-uploader__input-box">
+                      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+      </view>
+    </view>
+  </view>
+<progress percent="{{progress}}" style="float:left;width:100%;" hidden="{{progress_show}}"  show-info />
+
+  <view style="border-bottom:1rpx solid #ccc;width:100%;float:left;"></view>
+  <view class="page-body" style="float:left;width:100%;border-bottom:1rpx solid #ccc;">
+    <view class="page-section">
+      <view class="page-body-info" bindtap="chooseLocation">
+        <block wx:if="{{hasLocation === false}}">
+          <image src="../../../icon/dingwei.png" class="page-body-img"></image>
+          <text class="page-body-text" name="address">所在位置</text>
+           <text class='right iconfont icon-fanhui item_icon'></text> 
+        </block>
+        <block wx:if="{{hasLocation === true}}">
+          <image src="../../../icon/dingwei.png" class="page-body-img"></image>
+          <text class="page-body-text" name="address">{{locationAddress}}</text>
+          <text bindtap="clear" class='right iconfont icon-guanbi item_icon'></text> 
+        </block>
+      </view>
+    </view>
+  </view>
+  <view style="width:100%;">
+    <button id="mini-btn" type="primary" size="default" form-type="submit">提交</button>
+  </view>
+</form>
+
+
+<action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetbindchange">
+    <block wx:for-items="{{actionSheetItems}}">
+        <action-sheet-item bindtap="bind{{item.bindtap}}">{{item.txt}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+</action-sheet>
+

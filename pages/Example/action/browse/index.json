@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "navigationBarTitleText": "朋友圈动态",
+  "enablePullDownRefresh": true
+}
